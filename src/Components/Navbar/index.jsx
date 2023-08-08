@@ -1,19 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-  const activeStyle = "underline underline-offset-4";
+  const activeStyle = 'underline underline-offset-4';
 
   return (
-    <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light">
-      <ul className="flex items-center gap-3">
-        <li className="font-semibold text-lg">
-          <NavLink to="/">
+    <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
+      <ul className='flex items-center gap-3'>
+        <li className='font-semibold text-lg'>
+          <NavLink to='/'>
             BOMYIYAS
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/"
+            to='/'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Inicio
@@ -21,7 +21,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/mates"
+            to='/mates'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Mates
@@ -29,7 +29,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/termos"
+            to='/termos'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Termos
@@ -37,7 +37,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/bombillas"
+            to='/bombillas'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Bombillas
@@ -45,7 +45,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/accesorios"
+            to='/accesorios'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Accesorios
@@ -53,11 +53,11 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <ul className="flex items-center gap-3">
-        <li className="text-black/60">contacto@prueba.com.ar</li>
+      <ul className='flex items-center gap-3'>
+        <li className='text-black/60'>contacto@prueba.com.ar</li>
         <li>
           <NavLink
-            to="/my-orders"
+            to='/my-orders'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Ordenes
@@ -65,7 +65,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/my-account"
+            to='/my-account'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Mi Cuenta
@@ -73,7 +73,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/sign-in"
+            to='/sign-in'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Sign In
