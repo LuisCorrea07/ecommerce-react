@@ -1,14 +1,16 @@
+import { useContext } from 'react';
+import { ShoppingCartContext } from '../../Context';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const activeStyle = 'underline underline-offset-4';
-
+  const context = useContext(ShoppingCartContext)
   return (
     <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
       <ul className='flex items-center gap-3'>
         <li className='font-semibold text-lg'>
           <NavLink to='/'>
-            BOMYIYAS
+            Shopi
           </NavLink>
         </li>
         <li>
@@ -16,39 +18,47 @@ const Navbar = () => {
             to='/'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Inicio
+            All
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/mates'
+            to='/clothes'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Mates
+            Clothes
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/termos'
+            to='/electronics'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Termos
+            Electronics
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/bombillas'
+            to='/fornitures'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Bombillas
+            Fornitures
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/accesorios'
+            to='/toys'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Accesorios
+            Toys
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/others'
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Others
           </NavLink>
         </li>
       </ul>
@@ -60,7 +70,7 @@ const Navbar = () => {
             to='/my-orders'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Ordenes
+            My Orders
           </NavLink>
         </li>
         <li>
@@ -68,7 +78,7 @@ const Navbar = () => {
             to='/my-account'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Mi Cuenta
+            My Account
           </NavLink>
         </li>
         <li>
@@ -79,7 +89,10 @@ const Navbar = () => {
             Sign In
           </NavLink>
         </li>
-        <li>🛒0</li>
+        <li>
+          🛒{context.count}
+
+        </li>
       </ul>
     </nav>
   );

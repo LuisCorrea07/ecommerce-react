@@ -5,7 +5,7 @@ function SignIn() {
   return (
 
       <Layout>
-        Sign-in
+        SignIn
       </Layout>
   )
 }

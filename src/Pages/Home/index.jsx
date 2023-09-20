@@ -7,15 +7,15 @@ function Home() {
 
   useEffect(() => {
     fetch("https://api.escuelajs.co/api/v1/products")
-      .then((response) => response.json())
-      .then((data) => setItems(data));
+      .then(response => response.json())
+      .then(data => setItems(data));
   }, []);
 
   return (
     <Layout>
-      Inicio
-      <div className="grid gap-4 grid-cols-3 ml-20 w-full max-w-screen-sm-lg">
-        {items?.map((item) => (
+      Home
+      <div className="grid gap-4 grid-cols-4 ml-20 w-full max-w-screen-sm-lg">
+        {items?.map(item => (
           <Card key={item.id} data={item} />
         ))}
       </div>
