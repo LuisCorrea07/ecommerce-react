@@ -4,7 +4,7 @@ import PropTypes from "prop-types"; // Importa PropTypes
 export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({ children }) => {
-  //ShoppingCard
+  //incrementear contador ShoppingCard
   const [count, setCount] = useState(0);
  
  //Abrir-cerrar ProductDetail
@@ -18,9 +18,17 @@ export const ShoppingCartProvider = ({ children }) => {
     price:"",
     description:"",
     images: [],
-  });
+  })
+
+  //Abrir-cerrar Checkout Side Menu
+  const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
+  const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true)
+  const closeCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false)
 
 
+
+  //Mostrar productos
+  const [cartProducts, setcartProducts] = useState([])
 
   return (
     <ShoppingCartContext.Provider value={{ 
@@ -30,7 +38,12 @@ export const ShoppingCartProvider = ({ children }) => {
       closeProductDetail,
       isProductDetailOpen,
       productToShow,
-      setProductToShow
+      setProductToShow,
+      cartProducts,
+      setcartProducts,
+      isCheckoutSideMenuOpen,
+      openCheckoutSideMenu,
+      closeCheckoutSideMenu
     }}>
       {children}
     </ShoppingCartContext.Provider>
