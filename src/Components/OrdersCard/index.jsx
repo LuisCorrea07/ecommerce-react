@@ -1,7 +1,7 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import PropTypes from "prop-types";
 
-const OrdersCard = (props) => {
+const OrdersCard = props => {
   const { totalPrice, totalProducts } = props;
   return (
     <div className="flex justify-between items-center mb-3 border border-black">
@@ -15,7 +15,6 @@ const OrdersCard = (props) => {
 };
 
 OrdersCard.propTypes = {
-  
   totalPrice:PropTypes.number.isRequired,
   totalProducts: PropTypes.number.isRequired
 };
